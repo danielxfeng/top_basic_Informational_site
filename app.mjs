@@ -25,7 +25,7 @@ app.get("/contact-me", async (req, res) => {
   res.type("text/html");
   res.send(await getFile("contact-me"));
 });
-app.use(async (req, res) => {
+app.get("*", async (req, res) => {
   res.type("text/html");
   res.send(await getFile("404"));
 });
